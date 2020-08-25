@@ -1,0 +1,141 @@
+\mode<presentation>
+
+% Requirement
+%\RequirePackage{graphicx}
+
+%\setbeamertemplate{frametitle}[default][right]
+
+\newcommand{\advisor}{}
+\newcommand{\committee}{}
+
+%% Fonts
+%% --------------------------------------------------------
+\setbeamerfont{data}{size=\footnotesize, series=\bfseries}
+\setbeamerfont{date}{size=\footnotesize}
+\setbeamerfont{author}{size=\footnotesize}
+%% --------------------------------------------------------
+
+%% Inner 
+% \useinnertheme{circles} o \useinnertheme{ubb}
+%% --------------------------------------------------------
+\setbeamertemplate{items}[circle]
+\setbeamertemplate{sections/subsections in toc}[circle]
+
+
+\defbeamertemplate*{title page}{ubb}[1][]
+{
+  \vbox{}
+  \vfill
+  \begingroup
+    \centering
+    \vskip1em
+    \begin{beamercolorbox}[sep=4pt,center,#1,rounded=true]{title}
+      \usebeamerfont{title}\inserttitle\par%
+      \ifx\insertsubtitle\@empty%
+      \else%
+        \vskip0.25em%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+      \fi%     
+    \end{beamercolorbox}%
+    \vskip0.25em\par
+    \begin{beamercolorbox}[sep=8pt,center,#1]{author}
+      \usebeamerfont{author}\insertauthor\par
+      \vskip1em%
+      {\usebeamerfont{data}Profesor Patrocinante\par}
+      \usebeamerfont{author}\advisor\par
+      \vskip1em%
+      {\usebeamerfont{data}Comision Evaluadora\par}
+      \usebeamerfont{author}\committee
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=4pt,center,#1]{institute}
+      \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    
+    \vfill
+    \begin{beamercolorbox}[center,#1]{date}
+      \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+    {\usebeamercolor[fg]{titlegraphic}\inserttitlegraphic\par}
+  \endgroup
+  \vfill
+}
+%% --------------------------------------------------------
+
+
+
+%% Outer 
+% \useoutertheme{ubb}
+%% --------------------------------------------------------
+\setbeamertemplate{background}{
+	\includegraphics[width=\paperwidth,height=\paperheight]{images/fondo}
+}
+
+
+\defbeamertemplate*{frametitle}{ubb}[1][center]
+{%
+  \ifbeamercolorempty[bg]{frametitle}{}{\nointerlineskip}%
+  \@tempdima=\textwidth%
+  \advance\@tempdima by\beamer@leftmargin%
+  \advance\@tempdima by\beamer@rightmargin%
+   \hfill \begin{beamercolorbox}[leftskip=3cm,sep=0.3cm,#1,wd=0.8\textwidth]{frametitle}
+    \usebeamerfont{frametitle}%
+    \vbox{}\vskip-1ex%
+    \if@tempswa\else\csname beamer@fte#1\endcsname\fi%
+    \strut\insertframetitle\par%
+    {%
+      \ifx\insertframesubtitle\@empty%
+      \else%
+      {\usebeamerfont{framesubtitle}\usebeamercolor[fg]{framesubtitle}\strut\insertframesubtitle\par}%
+      \fi
+    }%
+    \vskip-1ex%
+    \if@tempswa\else\vskip-.3cm\fi%
+  \end{beamercolorbox} 
+  \hfill\hfill%
+}
+
+%% --------------------------------------------------------
+
+
+
+%% Color
+% \usecolortheme{ubb}
+%% --------------------------------------------------------
+\definecolor{orange}{RGB}{248, 182, 26}
+\definecolor{yellow}{RGB}{252, 190, 0}
+\definecolor{gray}{RGB}{112, 109, 111}
+\definecolor{red}{RGB}{241, 0, 0}
+\definecolor{blue}{RGB}{45, 0, 175}
+
+
+\definecolor{gray1}{RGB}{177, 177, 182}
+\definecolor{gray2}{RGB}{227, 227, 227}
+\definecolor{gray3}{RGB}{233, 231, 232}
+\definecolor{gray4}{RGB}{243, 243, 243}
+
+\definecolor{yellow-lg}{RGB}{254, 192, 0}
+
+\setbeamercolor{alerted text}{fg=blue}
+\setbeamercolor*{p1}{fg=black,bg=gray4}
+\setbeamercolor*{p2}{fg=black,bg=orange}
+\setbeamercolor*{p3}{fg=white, bg=blue}
+\setbeamercolor*{p4}{fg=blue,bg=orange}
+\setbeamercolor*{pt}{fg=black}
+
+\setbeamercolor*{titlelike}{parent=p1}
+\setbeamercolor{frametitle}{parent=pt}
+
+\setbeamercolor{block title}{fg=orange}
+\setbeamercolor{item}{fg=gray} 
+
+%% --------------------------------------------------------
+
+
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+
+
+
+\mode<all>
